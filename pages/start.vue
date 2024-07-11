@@ -8,11 +8,7 @@
         <v-progress-linear indeterminate color="primary" />
       </div>
       <div v-if="!loading">
-        <div v-for="stream in streams">
-          <nuxt-link :to="{ name: 'watch-playbackurl', params: { 'playbackurl': stream } }">
-            {{ stream }}
-          </nuxt-link>
-        </div>
+        <div>rtmp_url: </div>
       </div>
     </v-col>
   </v-row>
@@ -23,13 +19,13 @@ export default {
   data () {
     return {
       loading: true,
-      streams: []
+      rtmp_url: ''
     }
   },
   async mounted () {
-    const res = await fetch(process.env.lambdaUrl + '/streams')
+    const res = await fetch(process.env.lambdaUrl + '/start', { method: 'POST' })
     const resjson = await res.json()
-    this.streams = resjson.playback_urls
+    this.rtmp_url = 'https://' + resjson.ingest_endpoint + '/app/' + resjson.stream_key
     this.loading = false
   }
 }

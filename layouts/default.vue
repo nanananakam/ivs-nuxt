@@ -97,14 +97,14 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Streaming',
+          icon: 'mdi-play',
+          title: 'Home',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'About',
-          to: '/about'
+          icon: 'mdi-video',
+          title: 'Start',
+          to: '/start'
         }
       ],
       miniVariant: false,
