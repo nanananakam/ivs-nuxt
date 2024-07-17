@@ -34,7 +34,9 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  env: {},
+  env: {
+    LAMBDA_URL: process.env.LAMBDA_URL
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -48,7 +50,6 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    '@nuxtjs/dotenv'
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

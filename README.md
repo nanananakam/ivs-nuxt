@@ -5,10 +5,7 @@
 - Lambda側が認証何もなしなので、LambdaのURLを知ってさえいればなんでもできます
 
 # 設定
-- .envファイルを作成し、以下の形式で https://github.com/nanananakam/ivs-simple でdeployした Lambda Function のURLを設定してください
-```
-LAMBDA_URL=（Lambda FunctionのURL）
-```
+-  https://github.com/nanananakam/ivs-simple でdeployした Lambda Function のURLを `LAMBDA_URL` として設定
 
 # 概要
 - `/start`で配信開始。rtmpのurlが取得できます
