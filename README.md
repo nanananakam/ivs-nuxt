@@ -1,10 +1,14 @@
 # 注意
+- これは試験的なコードであり、 以下を含めてセキュリティ・コンプライアンス・コスト等考慮していない点が多くありサービスを一般公開すると問題あるコードです
 - Node v16で動作します。Nodeのバージョンをそれ以上にあげるとエラーがでます（未解決）
-- Nuxt2です。Nuxt3に上げたい（未）
-- セキュリティ等考慮していない点が多くありサービスを一般公開すると問題あるコードです
+- Nuxt2です。Nuxtのバージョンあげたい（未）
+- Lambda側が認証何もなしなので、LambdaのURLを知ってさえいればなんでもできます
 
 # 設定
-- 環境変数 `lambdaUrl` に https://github.com/nanananakam/ivs-simple でdeployした Lambda Function のURLを設定してください
+- .envファイルを作成し、以下の形式で https://github.com/nanananakam/ivs-simple でdeployした Lambda Function のURLを設定してください
+```
+LAMBDA_URL=（Lambda FunctionのURL）
+```
 
 # 概要
 - `/start`で配信開始。rtmpのurlが取得できます

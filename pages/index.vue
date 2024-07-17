@@ -9,7 +9,7 @@
       </div>
       <div v-if="!loading">
         <div v-for="stream in streams">
-          <nuxt-link :to="{ name: 'watch-playbackurl', params: { 'playbackurl': stream } }">
+          <nuxt-link :to="{ name: 'watch-arn', params: { 'arn': stream } }">
             {{ stream }}
           </nuxt-link>
         </div>
@@ -27,9 +27,9 @@ export default {
     }
   },
   async mounted () {
-    const res = await fetch(process.env.lambdaUrl + '/streams')
+    const res = await fetch(process.env.LAMBDA_URL + '/streams')
     const resjson = await res.json()
-    this.streams = resjson.playback_urls
+    this.streams = resjson.arns
     this.loading = false
   }
 }
